@@ -1,0 +1,26 @@
+body {
+    padding-top: 70px;
+    /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+ul
+{
+    list-style-type: none;
+}
+
+.panel-title{
+    font-size: 20px;
+    color: #004770;
+}
+
+/* List enumeration for teaching */
+.title{
+    font-size: 18px;
+    color: #004770;
+}
+.description{
+    font-size: 14px;
+}
+.info{
+    font-size: 10px;
+}
