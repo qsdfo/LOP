@@ -1,2 +1,3 @@
 # LOP
-Live orchestral piano project from IRCAM (Léo and Philippe
+
+Live orchestral piano (LOP) project from IRCAM (Léo and Philippe)
