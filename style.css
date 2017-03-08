@@ -19,24 +19,38 @@ ul
     color: #004770;
 }
 
-/* Nav bar items get down when hover */
-.downcontent{
-    display: none;
-    position: absolute;
-    background-color: #222;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+
+/* The side navigation menu */
+.sidenav {
+   height: 100%; /* 100% Full-height */
+   width: 250px; /* 0 width - change this with JavaScript */
+   position: fixed; /* Stay in place */
+   z-index: 1; /* Stay on top */
+   top: 0;
+   left: 0;
+   background-color: #fff;
+   overflow-x: hidden; /* Disable horizontal scroll */
+   padding-top: 60px; /* Place content 60px from the top */
+   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
-.downcontent a {
-    color: #9d9d9d;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
+/* The navigation menu links */
+.sidenav a {
+   padding: 8px 8px 8px 32px;
+   text-decoration: none;
+   font-size: 25px;
+   color: #9d9d9d;
+   display: block;
+   transition: 0.3s
 }
-.down:hover .downcontent{
-    display: block;
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover, .offcanvas a:focus{
+   color: #000;
 }
-.downcontent a:hover{
-    color: #eee;
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+   position: absolute;
+   top: 0;
+   right: 25px;
+   font-size: 36px;
+   margin-left: 50px;
 }

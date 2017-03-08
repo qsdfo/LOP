@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>LOP</title>
+    <title>LOP database</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -17,17 +17,20 @@
     <!-- Custom CSS -->
     <link href="style.css" rel="stylesheet">
 
+    <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+    </script>
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
 
 <body>
 
-    <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -44,22 +47,10 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="database.html">Dataset</a>
+                        <a href="database.html">Database</a>
                     </li>
-                    <li class="down">
+                    <li>
                         <a href="models.html">Models</a>
-                        <div class="downcontent">
-                            <a href="RBM.html">RBM</a>
-                            <a href="cRBM.html">cRBM</a>
-                            <a href="FGcRBM.html">FGcRBM</a>
-                            <a href="LSTM.html">LSTM</a>
-                            <a href="RnnRbm.html">RnnRbm</a>
-                            <a href="LstmRbm.html">LstmRbm</a>
-                            <a href="cRnnRbm.html">cRnnRbm</a>
-                            <a href="cLstmRbm.html">cLstmRbm</a>
-                            <a href="FGcRnnRbm.html">FGcRnnRbm</a>
-                            <a href="FGcLstmRbm.html">FGcLstmRbm</a>
-                        </div>
                     </li>
                 </ul>
             </div>
@@ -68,11 +59,79 @@
         <!-- /.container -->
     </nav>
 
+    <div id="mySidenav" class="sidenav">
+        <a href="#Link">Link</a>
+        <a href="#Description">Description</a>
+        <a href="#Time_alignment">Time alignment</a>
+    </div>
+
     <!-- Page Content -->
     <div class="container">
         <hr>
         <div class="row">
             <h1>Database</h1>
+        </div>
+        <hr>
+
+        <a name="Link"></a>
+        <div class="row">
+            <h3>Link</h3>
+            <a href="LOP_database.zip">LOP_database.zip</a>
+        </div>
+        <hr>
+
+        <a name="Description"></a>
+        <div class="row">
+            <h3>Description</h3>
+            <div class="col-lg-4" align="justify">
+                <p>
+                    This is a <strong><i>MIDI</i> database</strong> of <strong>223 pairs of piano scores and corresponding orchestrations</strong> performed by famous composers.
+                    The figure of the right-hand side represents the hierarchy of the database and general statistics are given in the table.
+                    $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
+                </p>
+                <p>
+                    The dataset is split between train, validation and test sets of files that represent approximately 80%, 10% and 10% of the full set.
+                    The details of the split we used is given in text files constructed as the name of the folders and the name of the subset.
+                    For instance, the files from the <i>liszt_classical_archives</i> used for the training step
+                    are listed in the <i>liszt_classical_archives_train.txt</i> file.
+
+                </p>
+                <p>
+                    <strong>Warning : </strong>
+                    We suggest not to use the IMSLP database which contains a lot of non-matching pairs.
+                    Cleaning will be done as soon as possible.
+                </p>
+
+            </div>
+            <div class="col-lg-8">
+                Tableau statistics + hierarchy
+            </div>
+        </div>
+        <hr>
+
+        <div class="row">
+            <h3>Data representation in LOP</h3>
+            <div class="col-lg-4" align="justify">
+                We used a simple piano-roll representation to process the orchestral and piano scores in LOP.
+                A piano-roll is a matrix whose rows represent pitches and columns represent a time frame depending on the time quantization.
+                A pitch p at time t played with an intensity i is represented by $pr(p,t) = i$, $0$ being a note off.
+                This definition is extended to an orchestra by simply concatenating the piano-rolls of every instruments along the pitch dimension.
+            </div>
+            <div class="col-lg-8">
+                Schéma
+            </div>
+        </div>
+        <hr>
+
+        <a name="Time_alignment"></a>
+        <div class="row">
+            <h3>Time alignment</h3>
+            <div class="col-lg-4" align="justify">
+                Time alignment is important
+            </div>
+            <div class="col-lg-8">
+                Schéma
+            </div>
         </div>
         <hr>
 
