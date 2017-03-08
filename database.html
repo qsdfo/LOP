@@ -62,6 +62,7 @@
     <div id="mySidenav" class="sidenav">
         <a href="#Link">Link</a>
         <a href="#Description">Description</a>
+        <a href="#Data_representation">Data representation</a>
         <a href="#Time_alignment">Time alignment</a>
     </div>
 
@@ -71,23 +72,22 @@
         <div class="row">
             <h1>Database</h1>
         </div>
-        <hr>
 
         <a name="Link"></a>
+        <hr>
         <div class="row">
             <h3>Link</h3>
             <a href="LOP_database.zip">LOP_database.zip</a>
         </div>
-        <hr>
 
         <a name="Description"></a>
+        <hr>
         <div class="row">
             <h3>Description</h3>
             <div class="col-lg-4" align="justify">
                 <p>
-                    This is a <strong><i>MIDI</i> database</strong> of <strong>223 pairs of piano scores and corresponding orchestrations</strong> performed by famous composers.
+                    This database is a <strong><i>MIDI</i> collection</strong> of <strong>223 pairs of piano scores and corresponding orchestrations</strong> performed by famous composers.
                     The figure of the right-hand side represents the hierarchy of the database and general statistics are given in the table.
-                    $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
                 </p>
                 <p>
                     The dataset is split between train, validation and test sets of files that represent approximately 80%, 10% and 10% of the full set.
@@ -107,27 +107,53 @@
                 Tableau statistics + hierarchy
             </div>
         </div>
-        <hr>
 
+        <a name="Data_representation"></a>
+        <hr>
         <div class="row">
             <h3>Data representation in LOP</h3>
             <div class="col-lg-4" align="justify">
-                We used a simple piano-roll representation to process the orchestral and piano scores in LOP.
-                A piano-roll is a matrix whose rows represent pitches and columns represent a time frame depending on the time quantization.
-                A pitch p at time t played with an intensity i is represented by $pr(p,t) = i$, $0$ being a note off.
-                This definition is extended to an orchestra by simply concatenating the piano-rolls of every instruments along the pitch dimension.
+                <p>
+                    We used a simple <i>piano-roll</i> representation to process the orchestral and piano scores in LOP.
+                    A <i>piano-roll</i> \(pr\) is a matrix whose rows represent pitches and columns represent a time frame depending on the time quantization.
+                    A pitch \(p\) at time \(t\) played with an intensity \(i\) is represented by \(pr(p,t) = i\), \(0\) being a note off.
+                    This definition is extended to an orchestra by simply concatenating the <i>piano-rolls</i> of every instruments along the pitch dimension.
+                </p>
+                <p>
+                    The rhythmic quantization is defined as the number of time frame in the <i>piano-roll</i> per quarter note.
+                    It is clear that the rhythmic quantization chosen impact the predictive task we use to train the models.
+                    For instance, as the quantization gets finer, an increasing number of successive frames are identical.
+                    To alleviate this problem and get rid of the quantization dependency, we remove from the pianoroll repeated event.
+                    More precisely, only the time event \(t_{e}\) such that
+                    \(\text{Orch}(t_{e}) \neq \text{Orch}(t_{e} - 1)\)
+                    are kept in the pianoroll.
+                </p>
             </div>
+
             <div class="col-lg-8">
                 Schéma
             </div>
         </div>
-        <hr>
 
         <a name="Time_alignment"></a>
+        <hr>
         <div class="row">
             <h3>Time alignment</h3>
             <div class="col-lg-4" align="justify">
-                Time alignment is important
+                <p>
+                    Given the diverse origins of the \textit{MIDI} files,
+                    it is very rare that a piano score and its proposed orchestration are aligned.
+                    Indeed, one file can be shorter than the other one, because of temporal dilation factors or skipped parts.
+                </p>
+                <p>
+                    Those misalignments are very problematic for the task that  we introduce in the next section,
+                    and in general for any processing which intends to take advantage of the joint information provided between the piano and orchestra scores.
+                    Hence, we developed an algorithm to automatically align two scores.
+                </p>
+                <p>
+                    More precisely, we consider the piano-roll representations (\prettyref{fig:piano-roll}) where the scores is represented as a sequence of vectors.
+                    Then, we need to define a distance between chords so that the problem of aligning two scores can be casted as a classic sequence alignment problem.
+                </p>
             </div>
             <div class="col-lg-8">
                 Schéma
