@@ -115,8 +115,8 @@
             <hr>
             <div class="row">
                 <h2>Data representation in LOP</h2>
-                <div class="col-lg-4" align="justify">
-                    <p>
+                <div class="col-lg-4">
+                    <p align="jusitfy">
                         We used a simple <i>piano-roll</i> representation to process the orchestral and piano scores in LOP.
                         A <i>piano-roll</i> \(pr\) is a matrix whose rows represent pitches and columns represent a time frame depending on the time quantization.
                         A pitch \(p\) at time \(t\) played with an intensity \(i\) is represented by \(pr(p,t) = i\), \(0\) being a note off.
@@ -130,8 +130,8 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4" align="justify">
-                    <p>
+                <div class="col-lg-4">
+                    <p align="justify">
                         The rhythmic quantization is defined as the number of time frame in the <i>piano-roll</i> per quarter note.
                         It is clear that the rhythmic quantization chosen impact the predictive task we use to train the models.
                         For instance, as the quantization gets finer, an increasing number of successive frames are identical.
