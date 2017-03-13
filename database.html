@@ -86,7 +86,7 @@
             <hr>
             <div class="row">
                 <h2>Description</h2>
-                <div class="col-lg-4" align="justify">
+                <div class="col-lg-10" align="justify">
                     <p>
                         This database is a <strong><i>MIDI</i> collection</strong> of <strong>223 pairs of piano scores and corresponding orchestrations</strong> performed by famous composers.
                         The figure of the right-hand side represents the hierarchy of the database and general statistics are given in the table.
@@ -104,11 +104,11 @@
                     </p>
 
                 </div>
-                <div class="col-lg-1">
+                <!-- <div class="col-lg-1">
                 </div>
                 <div class="col-lg-5">
                     Tableau statistics + hierarchy
-                </div>
+                </div> -->
             </div>
 
             <a name="Data_representation"></a>
@@ -154,18 +154,17 @@
                 <h2>Time alignment</h2>
                 <div class="col-lg-4" align="justify">
                     <p>
-                        Given the diverse origins of the \textit{MIDI} files,
+                        Given the diverse origins of the <i>MIDI</i> files,
                         it is very rare that a piano score and its proposed orchestration are aligned.
-                        Indeed, one file can be shorter than the other one, because of temporal dilation factors or skipped parts.
+                        Indeed, one file can be shorter than the other one, because of temporal dilatation factors or skipped parts.
                     </p>
                     <p>
-                        Those misalignments are very problematic for the task that  we introduce in the next section,
+                        Those misalignments are very problematic for the projective orchestration task,
                         and in general for any processing which intends to take advantage of the joint information provided between the piano and orchestra scores.
-                        Hence, we developed an algorithm to automatically align two scores.
-                    </p>
-                    <p>
-                        More precisely, we consider the piano-roll representations (\prettyref{fig:piano-roll}) where the scores is represented as a sequence of vectors.
-                        Then, we need to define a distance between chords so that the problem of aligning two scores can be casted as a classic sequence alignment problem.
+                        Hence, we use the Needleman-Wunsch algorithm to automatically align two scores.
+                        To that end, we defined a distance between two chords,
+                        which essentially consists in counting the number of jointly activated pitch-classes.
+                        This might look too simplistic, be proved to be sufficient.
                     </p>
                 </div>
                 <div class="col-lg-1">
