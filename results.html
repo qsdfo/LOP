@@ -28,18 +28,18 @@
 
     <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-0.12.4.min.js"></script>
     <script type="text/javascript">
-    Bokeh.set_log_level("info");
+        Bokeh.set_log_level("info");
     </script>
     <style>
-    html {
-        width: 100%;
-        height: 100%;
-    }
-    body {
-        width: 90%;
-        height: 100%;
-        margin: auto;
-    }
+        html {
+            width: 100%;
+            height: 100%;
+        }
+        body {
+            width: 90%;
+            height: 100%;
+            margin: auto;
+        }
     </style>
 </head>
 
@@ -87,36 +87,164 @@
         <hr>
         <div class="col-lg-2">
             <div id="mySidenav" class="sidenav">
-
+                <a href="#gen_orch">Generated orchestrations</a>
+                <a href="#acc_scores">Accuracy scores</a>
             </div>
         </div>
 
         <div class="col-lg-10">
             <div class="row">
                 <h1>Results</h1>
-            </div>
+            </div> 
 
-
-            <!-- Footer -->
+            <a name="gen_orch"></a>
             <hr>
-            <footer>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <p>Copyright &copy; Léopold Crestel 2016</p>
-                    </div>
-                </div>
-                <!-- /.row -->
-            </footer>
+            <div class="row">
+                <h2>Generated orchestrations</h2>
+                <p>
+                Some of the best generations we obtained so far, with the LSTM-plugged model, and by reducing orchestrations to a string quartet.
+                The reduction has been brutaly done by asssociating each instrument in the original score to the string with the closest pitch range.
+                </p>
+                </br>
+                <p>
+                <a href="audio/best_orchestral_generation.zip">
+                    <img border="0" alt="midi" src="images/png/file.png" width="50" height="50">
+                    best_orchestral_generation.zip
+                </a> 
+                </p>
+                
+        </div>
+            <a name="acc_scores"></a>
+            <hr>
+            <div class="row">
+                <h2>Accuracy scores</h2>
+                <p>
+                This section is more of a memento for my personal use of the different scores obtained with a variety of models.
+                If not mentioned, the score has been obtained running a random search over the hyper-parameter space.
+                </p>
+                <table style="width:100%">
+                  <tr>
+                    <th>Model name</th>
+                    <th>Description</th>
+                    <th>Score</th> 
+                    <th>Configuration</th>
+                </tr>
+                <tr>
+                    <td>Random</td>
+                    <td>Bernouilli with parameter sets according to the mean note activation in the training corpus</td>
+                    <td>?</td> 
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Repeat</td>
+                    <td>Prediction is the copy of the previous frame</td>
+                    <td>?</td> 
+                    <td>None</td>
+                </tr>
+
+                <tr>
+                    <td>Stateful-LSTM</td>
+                    <td></td> 
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>GRU-plugged</td>
+                    <td></td>
+                    <td></td> 
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>cGru</td>
+                    <td></td>
+                    <td></td> 
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>RBM</td>
+                    <td></td>
+                    <td></td> 
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>cRBM</td>
+                    <td></td>
+                    <td></td> 
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>FGcRBM</td>
+                    <td></td>
+                    <td></td> 
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>FGcRBM_no_bv</td>
+                    <td></td>
+                    <td></td> 
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>RnnRbm</td>
+                    <td></td>
+                    <td></td> 
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>LstmRbm</td>
+                    <td></td>
+                    <td></td> 
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>cRnnRbm</td>
+                    <td></td>
+                    <td></td> 
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>cLstmRbm</td>
+                    <td></td>
+                    <td></td> 
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>FGcRnnRbm</td>
+                    <td></td>
+                    <td></td> 
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>FGcLstmRbm</td>
+                    <td></td>
+                    <td></td> 
+                    <td></td>
+                </tr>
+            </table>
         </div>
 
-    </div>
-    <!-- /.container -->
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <!-- Footer -->
+    <hr>
+    <footer>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright &copy; Léopold Crestel 2016</p>
+            </div>
+        </div>
+        <!-- /.row -->
+    </footer>
+</div>
+
+</div>
+<!-- /.container -->
+
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
 
 </body>
 
