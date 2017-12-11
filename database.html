@@ -72,7 +72,7 @@
     <div class="container-fluid">
         <div class="col-lg-2">
             <div id="mySidenav" class="sidenav">
-                <a href="#Files">Files</a>
+                <a href="#files_code">Files and code</a>
                 <a href="#Description">Description</a>
                 <a href="#Data_representation">Data representation</a>
                 <a href="#Time_alignment">Time alignment</a>
@@ -84,14 +84,23 @@
                 <h1>Database</h1>
             </div>
 
-            <a name="Files"></a>
+            <a name="files_code"></a>
             <hr>
             <div class="row">
-                <h2>Files</h2>
-                <ul style="list-style-type:disc">
-                  <li>Midi files : <a href="database/LOP_database_06_09_17.zip">LOP_database.zip</a></li>
-                  <li>Useful code for processing the midi scores and performing automatic alignment : <a href="https://github.com/qsdfo/LOP_database">LOP_database github repository</a></li>
-                </ul>
+                <h2>Files and code</h2>
+                <h3> Projective database</h3>
+                    <ul style="list-style-type:disc">
+                      <li>Pairs of piano and corresponding orchestration : <a href="database/LOP_database_06_09_17.zip">LOP_database.zip</a></li>
+                      <li>Useful code for processing the midi scores and performing automatic alignment : <a href="https://github.com/qsdfo/LOP_database">LOP_database github repository</a></li>
+                    </ul>
+
+                <h3>Symbolic orchestral database</h3>
+                In the case of projective orchestration, this dataset can be used in a pre-training step.
+                    <ul style="list-style-type:disc">
+                      <li>Purely orchestral MIDI or MusicXML files : <a href="database/SOD.zip">SOD.zip</a></li>
+                      <li>A MIDI parser can be found here : <a href=""></a></li>
+                      <li>A MusicXML parser can be found here : <a href="https://github.com/qsdfo/musicxml_parser">Mucic_XML</a></li>
+                    </ul>
             </div>
 
             <a name="Description"></a>
