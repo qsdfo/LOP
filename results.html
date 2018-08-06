@@ -88,7 +88,7 @@
         <div class="col-lg-2">
             <div id="mySidenav" class="sidenav">
                 <a href="#gen_orch">Generated orchestrations</a>
-                <a href="#acc_scores">Accuracy scores</a>
+                <!-- <a href="#acc_scores">Accuracy scores</a> -->
             </div>
         </div>
 
@@ -101,8 +101,10 @@
             <hr>
             <div class="row">
                 <h2>Generated orchestrations</h2>
+
+                <h3>Tchaikowsky quartet</h3>
                 <p>
-                    Generated witht the LSTM model. 
+                    Generated with the LSTM model. 
                     All instruments have been mapped to a string quartet.
                 </p>
                 </br>
@@ -114,9 +116,33 @@
                 <p>
                     <img src = "results/orch_tchaikovsky.jpeg" width="70%" height="70%">
                 </p>
+
+                <h3>Brahms symphony n4 movement 4</h3>
+                </br>
+                <p>
+                    <audio controls>
+                    Audio : <source src="results/brahms_symph_4/brahms_0.wav" type="audio/wav"/>
+                    </audio>
+                </p>
+                <p>
+                    <img src = "results/brahms_symph_4/brahms_4_4_2_pages.jpeg" width="70%" height="70%">
+                </p>
+
+                <h3>Beethoven symphony 7 movement 2</h3>
+                </br>
+                <p>
+                    <audio controls>
+                    Audio : <source src="results/beethov_7_2/full_score.wav" type="audio/wav"/>
+                    </audio>
+                </p>
+                <p>
+                    <img src = "results/beethov_7_2/beethov_7_2.jpeg" width="70%" height="70%">
+                </p>
                 
             </div>
-            <a name="acc_scores"></a>
+
+
+            <!-- <a name="acc_scores"></a>
             <hr>
             <div class="row">
                 <h2>Accuracy scores</h2>
@@ -222,7 +248,7 @@
                     <td></td> 
                     <td></td>
                 </tr>
-            </table>
+            </table> -->
         </div>
 
 
