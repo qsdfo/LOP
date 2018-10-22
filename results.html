@@ -88,7 +88,7 @@
         <div class="col-lg-2">
             <div id="mySidenav" class="sidenav">
                 <a href="#gen_orch">Generated orchestrations</a>
-                <!-- <a href="#acc_scores">Accuracy scores</a> -->
+                <a href="#xent_vs_acc">X-entropy VS accuracy</a>
             </div>
         </div>
 
@@ -141,114 +141,38 @@
                 
             </div>
 
-
-            <!-- <a name="acc_scores"></a>
+            <a name="xent_vs_acc"></a>
             <hr>
             <div class="row">
-                <h2>Accuracy scores</h2>
+                <h2>X-entropy VS accuracy</h2>
+                Comparison of the binary cross-entropy and the accuracy measure used as selection criteria.
+                The extract to orchestrate is the beginning of the second movement of the 7th symphony of Beethoven.
+                
+                The cross-entropy validation error quickly reaches its maximum value, and the training is stopped after only 1 or 2 epochs
+                On the other side, the accuracy validation curve is much smoother and the over-fitting detection occurs after the 2Oth epoch.
+                
+                <h3>X-entropy</h3>
+                </br>
                 <p>
-                This section is more of a memento for my personal use of the different scores obtained with a variety of models.
-                If not mentioned, the score has been obtained running a random search over the hyper-parameter space.
+                    <audio controls>
+                    Audio : <source src="results/Experiments/xent_vs_accuracy/beeth_7_2_Xent.mp3" type="audio/mp3"/>
+                    </audio>
                 </p>
-                <table style="width:100%">
-                  <tr>
-                    <th>Model name</th>
-                    <th>Description</th>
-                    <th>Score</th> 
-                    <th>Configuration</th>
-                </tr>
-                <tr>
-                    <td>Random</td>
-                    <td>Bernouilli with parameter sets according to the mean note activation in the training corpus</td>
-                    <td>?</td> 
-                    <td>None</td>
-                </tr>
-                <tr>
-                    <td>Repeat</td>
-                    <td>Prediction is the copy of the previous frame</td>
-                    <td>?</td> 
-                    <td>None</td>
-                </tr>
+                <p>
+                    <img src = "results/Experiments/xent_vs_accuracy/beeth_7_2_Xent_small.jpeg" width="50%" height="50%">
+                </p>
+                <h3>Accuracy</h3>
+                </br>
+                <p>
+                    <audio controls>
+                    Audio : <source src="results/Experiments/xent_vs_accuracy/beeth_7_2_Acc.mp3" type="audio/mp3"/>
+                    </audio>
+                </p>
+                <p>
+                    <img src = "results/Experiments/xent_vs_accuracy/beeth_7_2_Acc_small.jpeg" width="50%" height="50%">
+                </p>
+            </div>
 
-                <tr>
-                    <td>Stateful-LSTM</td>
-                    <td></td> 
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>GRU-plugged</td>
-                    <td></td>
-                    <td></td> 
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>cGru</td>
-                    <td></td>
-                    <td></td> 
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>RBM</td>
-                    <td></td>
-                    <td></td> 
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>cRBM</td>
-                    <td></td>
-                    <td></td> 
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>FGcRBM</td>
-                    <td></td>
-                    <td></td> 
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>FGcRBM_no_bv</td>
-                    <td></td>
-                    <td></td> 
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>RnnRbm</td>
-                    <td></td>
-                    <td></td> 
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>LstmRbm</td>
-                    <td></td>
-                    <td></td> 
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>cRnnRbm</td>
-                    <td></td>
-                    <td></td> 
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>cLstmRbm</td>
-                    <td></td>
-                    <td></td> 
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>FGcRnnRbm</td>
-                    <td></td>
-                    <td></td> 
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>FGcLstmRbm</td>
-                    <td></td>
-                    <td></td> 
-                    <td></td>
-                </tr>
-            </table> -->
         </div>
 
 
