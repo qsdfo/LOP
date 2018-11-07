@@ -89,8 +89,10 @@
             <div id="mySidenav" class="sidenav">
                 <a href="#gen_orch">Generated orchestrations</a>
                 <a href="#xent_vs_acc">X-entropy VS accuracy</a>
+                <a href="#alternate_measures">Weighted binray cross-entropy</a>
                 <a href="#energy_vs_ff">Energy-based VS Feed-forward NN</a>
-                
+                <a href="#generation_strategies">Generation strategies</a>
+                <a href="#NADE">NADE</a>
             </div>
         </div>
 
@@ -175,6 +177,53 @@
                 </p>
             </div>
 
+            <a name="alternate_measures"></a>
+            <hr>
+            <div class="row">
+                <h2>Weighted binary cross-entropy</h2>
+                To lower the influence of the true negative, weighted binary cross-entropy have been proposed as a training criterion.
+                The results are presented below.
+                
+                <h3>Per-note weighted binary cross-entropy</h3>
+                </br>
+                <p>
+                    <audio controls>
+                    Audio : <source src="results/Experiments/alternate_measures/nwxent_pos_beeth_7_2.mp3" type="audio/mp3"/>
+                    </audio>
+                </p>
+                <p>
+                    <img src = "results/Experiments/alternate_measures/nwxent_pos_beeth_7_2.jpeg" width="50%" height="50%">
+                </p>
+                
+                <h3>Weighed binary cross-entropy</h3>
+                </br>
+                <p>
+                    If the negative weight is too small, false positives' impact becomes too small, and the orchestration too crowded
+                </p>
+                <p>
+                    <audio controls>
+                    Audio : <source src="results/Experiments/alternate_measures/wx_0_1_vraiment_trop_de_notes.mp3" type="audio/mp3"/>
+                    </audio>
+                </p>
+                <p>
+                    <img src = "results/Experiments/alternate_measures/wx_0_1_vraiment_trop_de_notes_SMALL.jpeg" width="50%" height="50%">
+                </p>
+
+                <h3>Note Weighted X-ent for selection</h3>
+                </br>
+                <p>
+                    When using NWX-ent as a selection criterion, the training process is stopped earlier (around the first epoch !) and the results are qualitatively very bad, with a lot of notes being off the harmony of the piano score.
+                </p>
+                <p>
+                    <audio controls>
+                    Audio : <source src="results/Experiments/alternate_measures/nwx_slecet_on_nwx.mp3" type="audio/mp3"/>
+                    </audio>
+                </p>
+                <p>
+                    <img src = "results/Experiments/alternate_measures/nwx_slecet_on_nwx_SMALL.jpeg" width="50%" height="50%">
+                </p>
+            </div>
+
             <a name="energy_vs_ff"></a>
             <hr>
             <div class="row">
@@ -183,9 +232,31 @@
                 <h3>Energy-based models</h3>
             </div>
 
+            <a name="generation_strategies"></a>
+            <hr>
+            <div class="row">
+                <h2>Generation strategies</h2>
+                <p>
+                    This zip file contains the orchestations generated using different strategies.
+                <p>
+                    <a href="results/Generation_strategies.zip">Generation_strategies.zip</a>
+                </p>
+            </div>
+
+            <a name="NADE"></a>
+            <hr>
+            <div class="row">
+                <h2>NADE</h2>
+                <p>
+                    This zip file contains generated orchestration proposed by the different NADE architectures we investigated.
+                </p>
+                <p>
+                    <a href="results/NADE.zip">NADE.zip</a>
+                </p>
+            </div>
+
+
         </div>
-
-
 
     <!-- Footer -->
     <hr>
